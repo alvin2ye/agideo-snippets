@@ -1,1 +1,26 @@
-add by Robin
+.
+|-- README
+|-- command
+|   `-- hourly_up_snippet.crontab
+|-- doc
+|   `-- merge_git_version
+|-- js
+|   |-- ext_croe_use_google_cdn.html
+|   |-- javascript_remove_blank_line.js
+|   |-- jquery_croe_use_google_cdn.html
+|   `-- prototype_get_checked_checkbox.js
+|-- rails
+|   `-- form_select_tag
+|-- rails_templete
+|   `-- blog.rails_templete
+|-- ruby
+|   `-- string_random.rb
+|-- shell
+|   |-- aliases.sh
+|   `-- install_agi_vim.sh
+`-- tools
+    |-- rgrep.rb
+    |-- screen_cut.sh
+    `-- snpt.rb
+
+8 directories, 15 files

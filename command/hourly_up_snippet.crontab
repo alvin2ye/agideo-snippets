@@ -1,0 +1,1 @@
+0 * * * *  cd ~/agideo-snippets && git pull > /dev/null 2>&1
