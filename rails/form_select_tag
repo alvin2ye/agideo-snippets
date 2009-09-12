@@ -1,0 +1,2 @@
+select_tag :status, options_for_select([["全部", -1]] + Milestone.status_options, (params[:status] || Milestone::STATUS_ACTIVE).to_i),
+      :onchange => "window.location = '#{project_path(@project)}?status=' + this.value; " 

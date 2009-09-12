@@ -1,0 +1,6 @@
+$ git remote add -f defunkt git://github.com/defunkt/grit.git
+$ git checkout -b defunkt/master
+$ git pull defunkt master:4f0ea0c
+$ git checkout master
+$ git merge defunkt/master
+$ git push
