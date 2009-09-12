@@ -1,0 +1,1 @@
+wget --mirror -w 2 --html-extension --conver-links -P ~/mirror_sits/site_name
