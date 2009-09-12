@@ -1,0 +1,4 @@
+run "rm public/index.html"
+generate(:scaffold, "post title:string body:text")
+route "map.root :controller => :posts"
+rake("db:migrate")
