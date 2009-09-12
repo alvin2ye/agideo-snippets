@@ -1,3 +1,4 @@
+# install doc rails proejct-name -m http://github.com/alvin2ye/agideo-snippets/raw/master/rails-templete/blog
 run "rm public/index.html"
 generate(:scaffold, "post title:string body:text")
 route "map.root :controller => :posts"
