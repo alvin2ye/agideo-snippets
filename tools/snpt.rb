@@ -39,7 +39,8 @@ class Snpt
 
       if File.directory?(item)
         results.update(find_in(item))
-      elsif item =~ /\.(\w*)$/
+      # elsif item =~ /\.(\w*)$/
+      else
         results.update(extract_annotations_from(item, /#{text}/))
       end
     end
