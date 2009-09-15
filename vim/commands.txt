@@ -1,0 +1,4 @@
+# 多文件替换
+>>vi *.rb
+:BufExplorer
+:argdo:%s/正则表达式/新内容/gc | w
