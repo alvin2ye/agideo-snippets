@@ -1,0 +1,7 @@
+sudo gem install cldwalker-hirb --source http://gems.github.com/
+
+vi ~/.irbrc
+
+require 'rubygems'
+require 'hirb'
+Hirb::View.enable
