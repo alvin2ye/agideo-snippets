@@ -1,7 +1,11 @@
 .
 |-- README
 |-- command
-|   `-- hourly_up_snippet.crontab
+|   |-- download_site_by_wget
+|   |-- hourly_up_snippet.crontab
+|   |-- install_hirb_and_config
+|   |-- logout_vnc_quick_keys
+|   `-- post_login_by_curl
 |-- doc
 |   `-- merge_git_version
 |-- js
@@ -10,7 +14,8 @@
 |   |-- jquery_croe_use_google_cdn.html
 |   `-- prototype_get_checked_checkbox.js
 |-- rails
-|   `-- form_select_tag
+|   |-- form_select_tag
+|   `-- plugin_hirb.sh
 |-- rails_templete
 |   `-- blog.rails_templete
 |-- ruby
@@ -18,9 +23,13 @@
 |-- shell
 |   |-- aliases.sh
 |   `-- install_agi_vim.sh
-`-- tools
-    |-- rgrep.rb
-    |-- screen_cut.sh
-    `-- snpt.rb
+|-- tools
+|   |-- build_new_pwd.sh
+|   |-- rgrep.rb
+|   |-- screen_cut.sh
+|   `-- snpt.rb
+`-- vim
+    `-- commands.txt
 
-8 directories, 15 files
+    9 directories, 22 files
+
