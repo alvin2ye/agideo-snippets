@@ -1,0 +1,76 @@
+body {
+  font: 62.5% "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+ol, ul, p {
+  font-size: 1.2em;
+  line-height: 1.5;
+}
+form, fieldset, legend{
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+legend {
+  font-size: 2em;
+  line-height: 1.8;
+  padding-bottom: .5em;
+}
+form ol, form ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+form li {
+  clear: both;
+  margin: 0 0 .75em;
+  padding: 0;
+}
+label {
+  display: block;
+  float: left;
+  line-height: 1.6;
+  margin-right: 10px;
+  text-align: right;
+  width: 120px;
+}
+label:after {
+  content: ':';
+}
+input, textarea {
+  background: #ddd;
+  font: 1em Arial, Helvetica, sans-serif;
+  padding: 1px 3px;
+  width: 250px;
+}
+textarea {
+  line-height: 1.3em;
+  padding: 0 3px;
+}
+input:focus, textarea:focus, select:focus {
+  background: #fff
+}
+button {
+  background: #ffd100;
+  border: 2px outset #333;
+  color: #333;
+  font-size: .9em;
+  font-weight: bold;
+  letter-spacing: .3em;
+  margin-left: 130px;
+  padding: .2em .5em;
+  text-transform: uppercase;
+}
+
+select {
+  background: #ddd;
+  width: 260px;
+  /* width is *usually* the input width + input padding + 4px */
+}
+
+.radio legend {
+  font-size: 1em;
+  line-height: 1.5;
+  padding: 0 0 0  6px;
+  margin: 0;
+  margin-left: 125px;  
+}
