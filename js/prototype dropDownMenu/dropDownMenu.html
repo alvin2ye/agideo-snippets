@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="prototype.js"></script>
+<script type="text/javascript" src="dropDownMenu.js"></script>
+<style>
+
+#nav { float: left; }
+		.nav_li { float: left; position: relative; }
+			a.nav_a { display: block; width: 80px; height: 27px; line-height: 27px; text-align: center; }
+			#index #nav_index, #prod #nav_prod, #area #nav_area, #envi #nav_envi, #service #nav_service, #cons #nav_cons, #clean #nav_clean, #corp #nav_corp,
+			a.nav_a:hover { text-decoration: none; background: url(../images/bg_nav.jpg) no-repeat center bottom; }
+
+
+				
+			.nav_sub { position:absolute; left: -10px; width: 100px; border:1px solid #435858; border-top: 0; text-align: center; background: #2f3f3f; }
+				.nav_sub li { width: 100%; margin: 3px 0; }
+					.nav_sub li a { display:block; padding: 0 10px; width: 80px; min-height: 24px; height: auto; line-height: 24px; }
+					* html .nav_sub li a { height: 24px; }
+					.nav_sub li a:hover { text-decoration: none; background: #435858; }
+					
+				
+
+</style>
+</head>
+
+<body>
+  <ul id="nav">
+    <li class="nav_li"><a class="nav_a" href="javascript:void(0);">首　页</a>
+        <ul class="nav_sub" style="display: none;">
+            <li><a href="#">新　　闻</a></li>
+            <li><a href="#">职位信息</a></li>
+        </ul>
+    </li>
+    <li class="nav_li"><a class="nav_a" href="javascript:void(0);">产　品</a>
+        <ul class="nav_sub" style="display: none;">
+            <li><a href="#">关于橡胶</a></li>
+            <li><a href="#">产品特性</a></li>
+            <li><a href="#">橡胶地板</a></li>
+            <li><a href="#">楼梯止滑板及附件</a></li>
+            <li><a href="#">导 盲 砖</a></li>
+            <li><a href="#">特殊定制</a></li>
+            <li><a href="#">质量保证</a></li>
+        </ul>
+    </li>
+  </ul>
+</body>
+</html>
