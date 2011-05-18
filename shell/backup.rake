@@ -51,6 +51,7 @@ namespace :backup do
           --skip-opt --create-option --set-charset --default-character-set=utf8 \
           -e --max_allowed_packet=#{max_allowed_packet} --net_buffer_length=#{net_buffer_length} #{db_config[:database]} > #{tmp_filename}
         tar -czvf #{filename} backup/db/tmp.sql
+        rm -f #{tmp_filename}
       CMD
       `#{cmd}`
     end
