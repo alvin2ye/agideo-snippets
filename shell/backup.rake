@@ -1,4 +1,5 @@
 require 'fileutils'
+require 'enumerator' # support rails 1.2.5
 
 namespace :backup do
   desc 'crontab -e'
