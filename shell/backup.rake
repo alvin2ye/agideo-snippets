@@ -65,7 +65,7 @@ namespace :backup do
       max_allowed_packet = ActiveRecord::Base.connection.execute("SHOW VARIABLES LIKE 'max_allowed_packet';").to_enum.to_a[0][1]
 
       cmd = <<-CMD
-        mysqldump -u#{db_config[:username]} -p#{db_config[:password]} \
+        mysqldump -u#{db_config[:username]} -p'#{db_config[:password]}' \
           --skip-opt --create-option --set-charset --default-character-set=utf8 \
           -e --max_allowed_packet=#{max_allowed_packet} --net_buffer_length=#{net_buffer_length} #{db_config[:database]} > #{tmp_filename}
         tar -czvf #{filename} backup/db/tmp.sql
