@@ -9,6 +9,7 @@ namespace :backup do
       0 3 * * * cd /var/www/<project> && /usr/bin/rake backup:log:analyze RAILS_ENV=production > /dev/null 2>&1
       5 3 * * * cd /var/www/<project> && /usr/bin/rake backup:log:do RAILS_ENV=production > /dev/null 2>&1
       9 3 * * * cd /var/www/<project> && /usr/bin/rake backup:db:mysql RAILS_ENV=production > /dev/null 2>&1
+      20 3 * * * cd /var/www/<project> && /usr/bin/rake backup:clear DAYS_AGO=7 > /dev/null 2>&1
     CRONTAB
   end
 
@@ -75,5 +76,12 @@ namespace :backup do
     end
   end
 
-  # TODO add backup:clear
+  desc 'backup clear, rake backup:clear DAYS_AGO=*, default is 7 days'
+  task :clear => :environment do
+    days_ago = ENV['DAYS_AGO']
+    days_ago = 7 unless days_ago
+
+    cmd = "find ./backup/ -mtime +#{days_ago} -type f -exec rm {} \\;"
+    `#{cmd}`
+  end
 end
