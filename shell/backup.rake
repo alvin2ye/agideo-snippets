@@ -77,7 +77,7 @@ namespace :backup do
   end
 
   desc 'backup clear, rake backup:clear DAYS_AGO=*, default is 7 days'
-  task :clear => :environment do
+  task :clear do
     backup_path = File.join(RAILS_ROOT, 'backup')
     days_ago = ENV['DAYS_AGO']
     days_ago = 7 unless days_ago
