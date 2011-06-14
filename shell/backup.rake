@@ -6,7 +6,7 @@ namespace :backup do
   task :crontab do
     puts <<-CRONTAB
       m(0-59) h(0-23) d(1-31) m(1-12) w(0-6 0=Sunday) command
-      0 3 * * * cd /var/www/<project> && /usr/bin/rake backup:log:analyze RAILS_ENV=production > /dev/null 2>&1
+      0 3 * * * cd /var/www/<project> && /usr/bin/rake backup:log:analyze APIKEY=* RAILS_ENV=production > /dev/null 2>&1
       5 3 * * * cd /var/www/<project> && /usr/bin/rake backup:log:do RAILS_ENV=production > /dev/null 2>&1
       9 3 * * * cd /var/www/<project> && /usr/bin/rake backup:db:mysql RAILS_ENV=production > /dev/null 2>&1
       20 3 * * * cd /var/www/<project> && /usr/bin/rake backup:db:clear DAYS_AGO=7 > /dev/null 2>&1
@@ -15,7 +15,7 @@ namespace :backup do
 
   desc 'backup log'
   namespace :log do
-    desc 'rake backup:log:analyze RAILS_ENV=production'
+    desc 'rake backup:log:analyze APIKEY=* RAILS_ENV=production'
     task :analyze => :environment do
       backup_path = File.join(RAILS_ROOT, 'backup', 'report', "#{Date.today.year}-#{Date.today.month}")
       FileUtils.mkdir_p(backup_path) unless File.exist?(backup_path)
@@ -35,6 +35,11 @@ namespace :backup do
         echo "所有访问数量:#{request_num}每个IP的访问次数:\n#{request_num_by_ip}" > #{filename}
       CMD
       `#{cmd}`
+
+      unless ENV['APIKEY'].blank?
+        cmd = "curl -X POST -F 'report_file=@#{filename}' http://report.agideo.com:8002/api?key=#{ENV['APIKEY']}"
+        `#{cmd}`
+      end
     end
 
     desc 'rake backup:log:do RAILS_ENV=production'
