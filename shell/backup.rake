@@ -42,14 +42,14 @@ namespace :backup do
       end
     end
 
-    desc 'rake backup:log:do RAILS_ENV=production'
-    task :do => :environment do
+    desc 'rake backup:log:all'
+    task :all do
       backup_path = File.join(RAILS_ROOT, 'backup', 'log', "#{Date.today.year}-#{Date.today.month}")
       FileUtils.mkdir_p(backup_path) unless File.exist?(backup_path)
       filename = File.join(backup_path, "log_#{Time.now.strftime("%Y%m%d%H%M%S")}.tar.gz")
 
       cmd = <<-CMD
-        tar -czvf #{filename} log/#{RAILS_ENV}.log
+        tar -czvf #{filename} log/*.log
       CMD
       `#{cmd}`
       Rake::Task["log:clear"].invoke if File.size?(filename)
