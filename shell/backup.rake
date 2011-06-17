@@ -32,7 +32,7 @@ namespace :backup do
           raise "Log analyze not support Rails #{Rails.version} version"
       end
       cmd = <<-CMD
-        echo "所有访问数量:#{request_num}每个IP的访问次数:\n#{request_num_by_ip}" > #{filename}
+        echo "Report Version: V1.0\n所有访问数量:#{request_num}每个IP的访问次数:\n#{request_num_by_ip}" > #{filename}
       CMD
       `#{cmd}`
 
