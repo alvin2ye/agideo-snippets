@@ -23,11 +23,11 @@ namespace :backup do
 
       case (defined?(Rails.version) ? Rails.version : RAILS_GEM_VERSION)
         when /3\.\d\.\d/
-          request_num = `cat log/#{RAILS_ENV}.log | grep "Started" | wc -l`
-          request_num_by_ip = `cat log/#{RAILS_ENV}.log | grep "Started" | awk '{print $5}' | sort | uniq -c`
+          request_num = `cat log/#{RAILS_ENV}.log | grep "Started " | wc -l`
+          request_num_by_ip = `cat log/#{RAILS_ENV}.log | ruby -ne 'puts $1 if /Started.*?(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})/' | sort | uniq -c`
         when /[2|1]\.\d\.\d/
-          request_num = `cat log/#{RAILS_ENV}.log | grep "Processing" | wc -l`
-          request_num_by_ip = `cat log/#{RAILS_ENV}.log | grep "Processing " | awk '{print (match($4, /^js/) ? $6 : $4)}' | sort | uniq -c`
+          request_num = `cat log/#{RAILS_ENV}.log | grep "Processing " | wc -l`
+          request_num_by_ip = `cat log/#{RAILS_ENV}.log | ruby -ne 'puts $1 if /Processing.*?(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})/' | sort | uniq -c`
         else
           raise "Log analyze not support Rails #{Rails.version} version"
       end
